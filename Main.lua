@@ -1,5 +1,5 @@
 --[[
-WRITTEN BY SIRJLEB - 10/9/22
+WRITTEN BY MSORKY - 10/9/22
 USAGE:
 CharacterModule:State(
 	Argument 1: Create or Remove
