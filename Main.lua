@@ -19,14 +19,6 @@ CharacterModule.__index = CharacterModule
 
 function CharacterModule.new(Character)
 	if CharacterModule[Character] == nil then
-		workspace:WaitForChild('finished')
-		
-		for I,BP in pairs(Character:GetChildren()) do
-			if BP:IsA("BasePart") then
-				game:GetService('PhysicsService'):SetPartCollisionGroup(BP,"NoCollide")
-			end
-		end
-		
 		Character:SetAttribute("WalkSpeedDefault",16)
 		Character:SetAttribute("JumpPowerDefault",50)
 		
@@ -51,15 +43,6 @@ function CharacterModule.new(Character)
 	end
 	
 	return CharacterModule[Character]
-end
-
-function CharacterModule:SetupNPC(Character)
- 	for I,BP in pairs(Character:GetChildren()) do
-		if BP:IsA("BasePart") and not BP.Anchored then
-			BP:SetNetworkOwner(nil)
-		end
-	end
-	CharacterModule.new(Character)
 end
 
 function CharacterModule:State(...)	
